@@ -1,0 +1,377 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOyIGf0dUFShgbB3sIEMaVO",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/prarit26/python/blob/main/assignment11\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "1. Create an assert statement that throws an AssertionError if the variable spam is a negative integer."
+      ],
+      "metadata": {
+        "id": "My6ClSa4FX3n"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 182
+        },
+        "id": "gFChfgr6FRSX",
+        "outputId": "a9817e8f-e649-45b8-f1b7-d77e2b220990"
+      },
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-1-f0ddd2c96b62>\u001b[0m in \u001b[0;36m<cell line: 2>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mspam\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m-\u001b[0m\u001b[0;36m22\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0;32massert\u001b[0m \u001b[0mspam\u001b[0m \u001b[0;34m>=\u001b[0m\u001b[0;36m0\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'Variable Spam should not be a -ve number'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m: Variable Spam should not be a -ve number"
+          ]
+        }
+      ],
+      "source": [
+        "spam = -22\n",
+        "assert spam >=0, 'Variable Spam should not be a -ve number'"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. Write an assert statement that triggers an AssertionError if the variables eggs and bacon contain strings that are the same as each other, even if their cases are different (that is, 'hello' and 'hello' are considered the same, and 'goodbye' and 'GOODbye' are also considered the same).\n",
+        " "
+      ],
+      "metadata": {
+        "id": "6LhNvHGnFmsV"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "def raise_assert(egg,bacon):\n",
+        "    egg = egg.upper()\n",
+        "    bacon = bacon.upper()\n",
+        "    assert not(egg == bacon), 'Eggs/Bacon should not be same, which are same now'"
+      ],
+      "metadata": {
+        "id": "m4DlpbCYF6Vs"
+      },
+      "execution_count": 2,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "raise_assert('hello','HELLO')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 252
+        },
+        "id": "J1tqGRI0F-DF",
+        "outputId": "ccf3e2c7-766f-4a16-bcb5-4eded2e00f50"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-3-66993e9183bf>\u001b[0m in \u001b[0;36m<cell line: 1>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mraise_assert\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'hello'\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m'HELLO'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-2-aeff50e9b554>\u001b[0m in \u001b[0;36mraise_assert\u001b[0;34m(egg, bacon)\u001b[0m\n\u001b[1;32m      2\u001b[0m     \u001b[0megg\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0megg\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m     \u001b[0mbacon\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mbacon\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m     \u001b[0;32massert\u001b[0m \u001b[0;32mnot\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0megg\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0mbacon\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'Eggs/Bacon should not be same, which are same now'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m: Eggs/Bacon should not be same, which are same now"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "raise_assert('goodbye','GOODbye')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 252
+        },
+        "id": "uG7DBjHLGCMT",
+        "outputId": "7aa38c47-8c6d-4e1c-841e-a6efc6d767d2"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-4-5322ce220e06>\u001b[0m in \u001b[0;36m<cell line: 1>\u001b[0;34m()\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mraise_assert\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m'goodbye'\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m'GOODbye'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-2-aeff50e9b554>\u001b[0m in \u001b[0;36mraise_assert\u001b[0;34m(egg, bacon)\u001b[0m\n\u001b[1;32m      2\u001b[0m     \u001b[0megg\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0megg\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      3\u001b[0m     \u001b[0mbacon\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mbacon\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 4\u001b[0;31m     \u001b[0;32massert\u001b[0m \u001b[0;32mnot\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0megg\u001b[0m \u001b[0;34m==\u001b[0m \u001b[0mbacon\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'Eggs/Bacon should not be same, which are same now'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m: Eggs/Bacon should not be same, which are same now"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Create an assert statement that throws an AssertionError every time."
+      ],
+      "metadata": {
+        "id": "8WlV_uTqGGde"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def assert_always():\n",
+        "    assert False, 'Always Shows Assertion Error'\n",
+        "assert_always()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 287
+        },
+        "id": "POnxf07NGC1S",
+        "outputId": "eb6ac83f-bad9-4fd3-8b99-db7a0782afaa"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "AssertionError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-5-b25c0da8a33f>\u001b[0m in \u001b[0;36m<cell line: 3>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0massert_always\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m     \u001b[0;32massert\u001b[0m \u001b[0;32mFalse\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'Always Shows Assertion Error'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0massert_always\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<ipython-input-5-b25c0da8a33f>\u001b[0m in \u001b[0;36massert_always\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mdef\u001b[0m \u001b[0massert_always\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m     \u001b[0;32massert\u001b[0m \u001b[0;32mFalse\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;34m'Always Shows Assertion Error'\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0massert_always\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mAssertionError\u001b[0m: Always Shows Assertion Error"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. What are the two lines that must be present in your software in order to call logging.debug()?"
+      ],
+      "metadata": {
+        "id": "MyeKkVDiGOD6"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import logging\n",
+        "logging.basicConfig(filename = 'application_log.txt',level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')"
+      ],
+      "metadata": {
+        "id": "WRQrw-QRGJVJ"
+      },
+      "execution_count": 6,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "import logging\n",
+        "logging.basicConfig(filename = 'application_log.txt',level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')\n",
+        "logging.debug(\"Data Inserted Successfully\")\n",
+        "logging.debug('Connection Closed Successfully')"
+      ],
+      "metadata": {
+        "id": "7PAtt6d0GUgK"
+      },
+      "execution_count": 14,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount('/content/drive')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "fD4XtlgdGuJj",
+        "outputId": "5a88ddff-91c9-4d57-d57d-87f43d893f82"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mounted at /content/drive\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "6. What are the five levels of logging?"
+      ],
+      "metadata": {
+        "id": "74wmSVMXH5-Q"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans: The Five levels of Logging provided by python's logging module are CRITICAL(50), ERROR(40), WARNING(30), INFO(20, DEBUG(10), NOTSET(0)"
+      ],
+      "metadata": {
+        "id": "mzlfsEiYH8jm"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. What line of code would you add to your software to disable all logging messages?"
+      ],
+      "metadata": {
+        "id": "kecde5pXH-4r"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "logging.disable = True"
+      ],
+      "metadata": {
+        "id": "VzVTS-uyIB7m"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "8.Why is using logging messages better than using print() to display the same message?"
+      ],
+      "metadata": {
+        "id": "uQbKjXhdIFxo"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans: Post devlopment of your code, you can disable logging messages without removing the logging function, whereas you need to manually remove print() statements, which is tedious activity. and also print is used when you want to display any particular message or help whereas logging is used to record all events like error, info, debug messages, timestamps."
+      ],
+      "metadata": {
+        "id": "bud_W3rbIJHG"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n",
+        "9.What are the differences between the Step Over, Step In, and Step Out buttons in the debugger?"
+      ],
+      "metadata": {
+        "id": "L9pNHJTeILYF"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans: The Differences between Step Over, Step In, Step Out buttons in debugger are:\n",
+        "\n",
+        "Step in - Step In button will cause the debugger to execute the next line of code and then pause again.\n",
+        "Step Over - Step Over button will execute the next line of code, similar to the Step In button. However, if the next line of code is a function call, the Step Over button will “step over” the code in the function. The function’s code will be executed at full speed, and the debugger will pause as soon as the function call returns.\n",
+        "Step out - Step Out button will cause the debugger to execute lines of code at full speed until it returns from the current functio"
+      ],
+      "metadata": {
+        "id": "YQ_UAjyiINy5"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10.After you click Continue, when will the debugger stop ?"
+      ],
+      "metadata": {
+        "id": "5WMvyXzZIQNh"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans: This will cause the program to continue running normally, without pausing for debugging untill it terminates or reaches a breakpoint."
+      ],
+      "metadata": {
+        "id": "0rDhWA92ISsc"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "11. What is the concept of a breakpoint?"
+      ],
+      "metadata": {
+        "id": "dT4LcSO-IUtD"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ans: Breakpoint is a setting on a line of code that causes the debugger to pause when the program execution reaches the line"
+      ],
+      "metadata": {
+        "id": "gJwlxPPLIW13"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "yzx2SZ61Gaoh"
+      },
+      "execution_count": 14,
+      "outputs": []
+    }
+  ]
+}
